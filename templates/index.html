@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Handwritten Note to Text</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="../statistic/style.css"> -->
+
+</head>
+<body>
+    <div class="container">
+        <h1>Upload a Handwritten Note</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Convert</button>
+        </form>
+
+        {% if text %}
+        <h2>Extracted Text:</h2>
+        <div class="output">{{ text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
